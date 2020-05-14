@@ -53,6 +53,11 @@ const resetBoard = () => {
     console.log(squares[i].id)
     // sets the innerHTML to null to replace the "X" or "O"
     squares[i].innerHTML = null
+
+    board = [
+      ["", "", ""],
+      ["", "", ""],
+      ["", "", ""]]
   }  
 }
 
@@ -91,7 +96,7 @@ const resetBoard = () => {
    const diagonalWin = () => {
     if((board[0][0] == "X" && board[1][1] == "X" && board[2][2] == "X") || (board[0][0] == "O" && board[1][1] == "O" && board[2][2] == "O")){
       return true;
-    } else if((board[0][2] == "X" && board[1][1] == "X" && board[0][0] == "X") || (board[0][2] == "O" && board[1][1] == "O" && board[0][0] == "O")){
+    } else if((board[0][2] == "X" && board[1][1] == "X" && board[2][0] == "X") || (board[0][2] == "O" && board[1][1] == "O" && board[2][0] == "O")){
       return true;
     }else {
       return false;
